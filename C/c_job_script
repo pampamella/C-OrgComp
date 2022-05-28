@@ -51,15 +51,6 @@ icc test_copy_matrix.c -o test_copy_matrix-icr.exe
 ./test_copy_matrix-icr.exe 5000
 
 echo '--------------------------------------------------'
-echo 'icc - Matrix Copy: Optimized'
-echo '--------------------------------------------------'
-
-icc -Ofast test_copy_matrix.c -o test_copy_matrix-ico.exe
-#icc -O3 -march=native -mfpmath=sse test_copy_matrix.c -o test_copy_matrix-ico.exe
-
-./test_copy_matrix-ico.exe 5000
-
-echo '--------------------------------------------------'
 echo 'gcc - Look and Say: Regular'
 echo '--------------------------------------------------'
 
@@ -74,22 +65,6 @@ echo '--------------------------------------------------'
 gcc -Ofast test_look_and_say.c -o test_look_and_say-gco.exe -lm
 
 ./test_look_and_say-gco.exe 40
-
-echo '--------------------------------------------------'
-echo 'icc - Look and Say: Regular'
-echo '--------------------------------------------------'
-
-icc test_look_and_say.c -o test_look_and_say-icr.exe -lm
-
-./test_look_and_say-icr.exe 40
-
-echo '--------------------------------------------------'
-echo 'icc - Look and Say: Optimized'
-echo '--------------------------------------------------'
-
-icc -Ofast test_look_and_say.c -o test_look_and_say-ico.exe -lm
-
-./test_look_and_say-ico.exe 40
 
 echo '--------------------------------------------------'
 echo 'gcc - Fibonacci: Regular'
@@ -109,23 +84,6 @@ gcc -Ofast test_fibonacci.c -o test_fibonacci-gco.exe -lm
 ./test_fibonacci-gco.exe 25
 
 echo '--------------------------------------------------'
-echo 'icc - Fibonacci: Regular'
-echo '--------------------------------------------------'
-
-icc test_fibonacci.c -o test_fibonacci-icr.exe
-
-./test_fibonacci-icr.exe 25
-
-echo '--------------------------------------------------'
-echo 'icc - Fobonacci: Optimized'
-echo '--------------------------------------------------'
-
-icc -Ofast test_fibonacci.c -o test_fibonacci-ico.exe
-#icc -O3 -march=native -mfpmath=sse test_fibonacci.c -o test_fibonacci-ico.exe
-
-./test_fibonacci-ico.exe 25
-
-echo '--------------------------------------------------'
 echo 'gcc - Matrix Multiplication: Regular'
 echo '--------------------------------------------------'
 
@@ -141,23 +99,6 @@ gcc -Ofast test_matrix_multiplication.c -o test_matrix_multiplication-gco.exe
 #gcc -O3 -march=native -mfpmath=sse test_matrix_multiplication.c -o test_matrix_multiplication-gco.exe
 
 ./test_matrix_multiplication-gco.exe 1500 1500 1500
-
-echo '--------------------------------------------------'
-echo 'icc - Matrix Multiplication: Regular'
-echo '--------------------------------------------------'
-
-icc test_matrix_multiplication.c -o test_matrix_multiplication-icr.exe
-
-./test_matrix_multiplication-icr.exe 1500 1500 1500
-
-echo '----------------------------------------------------'
-echo 'icc - Matrix Multiplication: Optimized'
-echo '----------------------------------------------------'
-
-icc -Ofast test_matrix_multiplication.c -o test_matrix_multiplication-ico.exe
-#icc -O3 -march=native -mfpmath=sse test_matrix_multiplication.c -o test_matrix_multiplication-ico.exe
-
-./test_matrix_multiplication-ico.exe 1500 1500 1500
 
 echo '--------------------------------------------------'
 echo 'gcc - Evaluate Functions: Regular'
@@ -176,22 +117,6 @@ gcc -Ofast test_evaluate_functions.c -o test_evaluate_functions-gco.exe -lm
 ./test_evaluate_functions-gco.exe 80000
 
 echo '--------------------------------------------------'
-echo 'icc - Evaluate Functions: Regular'
-echo '--------------------------------------------------'
-
-icc test_evaluate_functions.c -o test_evaluate_functions-icr.exe -lm
-
-./test_evaluate_functions-icr.exe 80000
-
-echo '--------------------------------------------------'
-echo 'icc - Evaluate Functions: Optimized'
-echo '--------------------------------------------------'
-
-icc -Ofast test_evaluate_functions.c -o test_evaluate_functions-ico.exe -lm
-
-./test_evaluate_functions-ico.exe 80000
-
-echo '--------------------------------------------------'
 echo 'gcc - Belief: Regular'
 echo '--------------------------------------------------'
 
@@ -206,22 +131,6 @@ echo '--------------------------------------------------'
 gcc -Ofast test_belief_propagation.c -o test_belief_propagation-gco.exe -lm
 
 ./test_belief_propagation-gco.exe 250
-
-echo '--------------------------------------------------'
-echo 'icc - Belief: Regular'
-echo '--------------------------------------------------'
-
-icc test_belief_propagation.c -o test_belief_propagation-icr.exe -lm
-
-./test_belief_propagation-icr.exe 250
-
-echo '--------------------------------------------------'
-echo 'icc - Belief: Optimized'
-echo '--------------------------------------------------'
-
-icc -Ofast test_belief_propagation.c -o test_belief_propagation-ico.exe -lm
-
-./test_belief_propagation-ico.exe 250
 
 echo '--------------------------------------------------'
 echo 'gcc - Markov Chain: Regular'
@@ -239,22 +148,6 @@ gcc -Ofast test_markov_chain.c -o test_markov_chain-gco.exe -lm
 
 ./test_markov_chain-gco.exe 5000
 
-echo '--------------------------------------------------'
-echo 'icc - Markov Chain: Regular'
-echo '--------------------------------------------------'
-
-icc test_markov_chain.c -o test_markov_chain-icr.exe -lm
-
-./test_markov_chain-icr.exe 5000
-
-echo '----------------------------------------------------'
-echo 'icc - Markov Chain: Optimized'
-echo '----------------------------------------------------'
-
-icc -Ofast test_markov_chain.c -o test_markov_chain-ico.exe -lm
-
-./test_markov_chain-ico.exe 5000
-
 echo '----------------------------------------------------'
 echo 'gcc - Fourth-order Laplace: Regular'
 echo '----------------------------------------------------'
@@ -271,22 +164,6 @@ gcc -Ofast test_laplace_jacobi_4.c -o test_laplace_jacobi_4-gco.exe -lm
 #gcc -O3 -march=native -mfpmath=sse test_laplace_jacobi_4.c -o test_laplace_jacobi_4-gco.exe -lm
 
 ./test_laplace_jacobi_4-gco.exe 100
-echo '----------------------------------------------------'
-echo 'icc - Fourth-order Laplace: Regular'
-echo '----------------------------------------------------'
-
-icc test_laplace_jacobi_4.c -o test_laplace_jacobi_4-icr.exe
-
-./test_laplace_jacobi_4-icr.exe 100
-
-echo '----------------------------------------------------'
-echo 'icc - Fourth-order Laplace: Optimized'
-echo '----------------------------------------------------'
-
-icc -Ofast test_laplace_jacobi_4.c -o test_laplace_jacobi_4-ico.exe
-#icc -O3 -march=native -mfpmath=sse test_laplace_jacobi_4.c -o test_laplace_jacobi_4-ico.exe
-
-./test_laplace_jacobi_4-ico.exe 100
 
 echo '--------------------------------------------------'
 echo 'gcc - Munchausen Number: Regular'
@@ -305,23 +182,6 @@ gcc -Ofast test_munchausen_number.c -o test_munchausen_number-gco.exe -lm
 ./test_munchausen_number-gco.exe
 
 echo '--------------------------------------------------'
-echo 'icc - Munchausen Number: Regular'
-echo '--------------------------------------------------'
-
-icc test_munchausen_number.c -o test_munchausen_number-icr.exe -lm
-
-./test_munchausen_number-icr.exe
-
-echo '--------------------------------------------------'
-echo 'icc - Munchausen Number: Optimized'
-echo '--------------------------------------------------'
-
-icc -Ofast test_munchausen_number.c -o test_munchausen_number-ico.exe -lm
-
-./test_munchausen_number-ico.exe
-
-
-echo '--------------------------------------------------'
 echo 'gcc - Pernicious Number: Regular'
 echo '--------------------------------------------------'
 
@@ -336,22 +196,6 @@ echo '--------------------------------------------------'
 gcc -Ofast test_pernicious_numbers.c -o test_pernicious_numbers-gco.exe -lm
 
 ./test_pernicious_numbers-gco.exe 100000
-
-echo '--------------------------------------------------'
-echo 'icc - Pernicious Number: Regular'
-echo '--------------------------------------------------'
-
-icc test_pernicious_numbers.c -o test_pernicious_numbers-icr.exe -lm
-
-./test_pernicious_numbers-icr.exe 100000
-
-echo '--------------------------------------------------'
-echo 'icc - Pernicious Number: Optimized'
-echo '--------------------------------------------------'
-
-icc -Ofast test_pernicious_numbers.c -o test_pernicious_numbers-ico.exe -lm
-
-./test_pernicious_numbers-ico.exe 100000
 
 echo '__________________________________________________'
 echo 'Delete all executables'
