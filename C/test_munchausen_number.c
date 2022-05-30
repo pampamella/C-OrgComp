@@ -12,6 +12,8 @@ int main(int argc, char* argv[]) {
     int n, i, number;
     int power_of_digits[10];
     clock_t start, finish;
+    FILE *fp;
+    fp = fopen("munchausen.txt","w");
 
     srand(time(NULL));
 
@@ -42,6 +44,7 @@ int main(int argc, char* argv[]) {
         i++;
     }
     finish = clock();
+    fprintf(fp,"%lf",(double)(finish-start)/CLOCKS_PER_SEC);
     printf("Munchausen numbers: %lf s \n", (double) (finish - start)/CLOCKS_PER_SEC);
     
     return 0;
