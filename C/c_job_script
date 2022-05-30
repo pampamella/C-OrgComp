@@ -17,12 +17,6 @@
 umask 022
 
 
-source /usr/share/modules/init/csh
-module purge
- 
-module load comp/gcc/9.3.0
-module load comp/intel/20.0.0.166
-
 rm -f *.exe
 
 echo '--------------------------------------------------'
@@ -32,6 +26,8 @@ echo '--------------------------------------------------'
 gcc test_copy_matrix.c -o test_copy_matrix-gcr.exe
 
 ./test_copy_matrix-gcr.exe 5000
+./test_copy_matrix-gcr.exe 7000
+./test_copy_matrix-gcr.exe 9000
 
 echo '--------------------------------------------------'
 echo 'gcc - Matrix Copy: Optimized'
@@ -41,6 +37,8 @@ gcc -Ofast test_copy_matrix.c -o test_copy_matrix-gco.exe
 #gcc -O3 -march=native -mfpmath=sse test_copy_matrix.c -o test_copy_matrix-gco.exe
 
 ./test_copy_matrix-gco.exe 5000
+./test_copy_matrix-gco.exe 7000
+./test_copy_matrix-gco.exe 9000
 
 echo '--------------------------------------------------'
 echo 'icc - Matrix Copy: Regular'
@@ -57,6 +55,8 @@ echo '--------------------------------------------------'
 gcc test_look_and_say.c -o test_look_and_say-gcr.exe -lm
 
 ./test_look_and_say-gcr.exe 40
+./test_look_and_say-gcr.exe 45
+./test_look_and_say-gcr.exe 48
 
 echo '--------------------------------------------------'
 echo 'gcc - Look and Say: Optimized'
@@ -65,6 +65,8 @@ echo '--------------------------------------------------'
 gcc -Ofast test_look_and_say.c -o test_look_and_say-gco.exe -lm
 
 ./test_look_and_say-gco.exe 40
+./test_look_and_say-gco.exe 45
+./test_look_and_say-gco.exe 48
 
 echo '--------------------------------------------------'
 echo 'gcc - Fibonacci: Regular'
@@ -73,6 +75,8 @@ echo '--------------------------------------------------'
 gcc test_fibonacci.c -o test_fibonacci-gcr.exe -lm
 
 ./test_fibonacci-gcr.exe 25
+./test_fibonacci-gcr.exe 35
+./test_fibonacci-gcr.exe 45
 
 echo '--------------------------------------------------'
 echo 'gcc - Fobonacci: Optimized'
@@ -82,6 +86,8 @@ gcc -Ofast test_fibonacci.c -o test_fibonacci-gco.exe -lm
 #gcc -O3 -march=native -mfpmath=sse test_fibonacci.c -o test_fibonacci-gco.exe -lm
 
 ./test_fibonacci-gco.exe 25
+./test_fibonacci-gco.exe 35
+./test_fibonacci-gco.exe 45
 
 echo '--------------------------------------------------'
 echo 'gcc - Matrix Multiplication: Regular'
@@ -90,6 +96,8 @@ echo '--------------------------------------------------'
 gcc test_matrix_multiplication.c -o test_matrix_multiplication-gcr.exe
 
 ./test_matrix_multiplication-gcr.exe 1500 1500 1500
+./test_matrix_multiplication-gcr.exe 1750 1750 1750
+./test_matrix_multiplication-gcr.exe 2000 2000 2000
 
 echo '----------------------------------------------------'
 echo 'gcc - Matrix Multiplication: Optimized'
@@ -99,6 +107,8 @@ gcc -Ofast test_matrix_multiplication.c -o test_matrix_multiplication-gco.exe
 #gcc -O3 -march=native -mfpmath=sse test_matrix_multiplication.c -o test_matrix_multiplication-gco.exe
 
 ./test_matrix_multiplication-gco.exe 1500 1500 1500
+./test_matrix_multiplication-gco.exe 1750 1750 1750
+./test_matrix_multiplication-gco.exe 2000 2000 2000
 
 echo '--------------------------------------------------'
 echo 'gcc - Evaluate Functions: Regular'
@@ -107,6 +117,8 @@ echo '--------------------------------------------------'
 gcc test_evaluate_functions.c -o test_evaluate_functions-gcr.exe -lm
 
 ./test_evaluate_functions-gcr.exe 80000
+./test_evaluate_functions-gcr.exe 90000
+./test_evaluate_functions-gcr.exe 100000
 
 echo '--------------------------------------------------'
 echo 'gcc - Evaluate Functions: Optimized'
@@ -115,6 +127,8 @@ echo '--------------------------------------------------'
 gcc -Ofast test_evaluate_functions.c -o test_evaluate_functions-gco.exe -lm
 
 ./test_evaluate_functions-gco.exe 80000
+./test_evaluate_functions-gco.exe 90000
+./test_evaluate_functions-gco.exe 100000
 
 echo '--------------------------------------------------'
 echo 'gcc - Belief: Regular'
@@ -123,6 +137,8 @@ echo '--------------------------------------------------'
 gcc test_belief_propagation.c -o test_belief_propagation-gcr.exe -lm
 
 ./test_belief_propagation-gcr.exe 250
+./test_belief_propagation-gcr.exe 500
+./test_belief_propagation-gcr.exe 1000
 
 echo '--------------------------------------------------'
 echo 'gcc - Belief: Optimized'
@@ -131,6 +147,8 @@ echo '--------------------------------------------------'
 gcc -Ofast test_belief_propagation.c -o test_belief_propagation-gco.exe -lm
 
 ./test_belief_propagation-gco.exe 250
+./test_belief_propagation-gco.exe 500
+./test_belief_propagation-gco.exe 1000
 
 echo '--------------------------------------------------'
 echo 'gcc - Markov Chain: Regular'
@@ -139,6 +157,8 @@ echo '--------------------------------------------------'
 gcc test_markov_chain.c -o test_markov_chain-gcr.exe -lm
 
 ./test_markov_chain-gcr.exe 5000
+./test_markov_chain-gcr.exe 10000
+./test_markov_chain-gcr.exe 15000
 
 echo '----------------------------------------------------'
 echo 'gcc - Markov Chain: Optimized'
@@ -147,6 +167,8 @@ echo '----------------------------------------------------'
 gcc -Ofast test_markov_chain.c -o test_markov_chain-gco.exe -lm
 
 ./test_markov_chain-gco.exe 5000
+./test_markov_chain-gco.exe 10000
+./test_markov_chain-gco.exe 15000
 
 echo '----------------------------------------------------'
 echo 'gcc - Fourth-order Laplace: Regular'
@@ -155,6 +177,8 @@ echo '----------------------------------------------------'
 gcc test_laplace_jacobi_4.c -o test_laplace_jacobi_4-gcr.exe -lm
 
 ./test_laplace_jacobi_4-gcr.exe 100
+./test_laplace_jacobi_4-gcr.exe 150
+./test_laplace_jacobi_4-gcr.exe 200
 
 echo '----------------------------------------------------'
 echo 'gcc - Fourth-order Laplace: Optimized'
@@ -164,6 +188,8 @@ gcc -Ofast test_laplace_jacobi_4.c -o test_laplace_jacobi_4-gco.exe -lm
 #gcc -O3 -march=native -mfpmath=sse test_laplace_jacobi_4.c -o test_laplace_jacobi_4-gco.exe -lm
 
 ./test_laplace_jacobi_4-gco.exe 100
+./test_laplace_jacobi_4-gco.exe 150
+./test_laplace_jacobi_4-gco.exe 200
 
 echo '--------------------------------------------------'
 echo 'gcc - Munchausen Number: Regular'
