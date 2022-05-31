@@ -41,6 +41,149 @@ gcc -Ofast test_copy_matrix.c -o test_copy_matrix-gco.exe
 ./test_copy_matrix-gco.exe 9000
 
 echo '--------------------------------------------------'
+echo 'gcc - Look and Say: Regular'
+echo '--------------------------------------------------'
+
+gcc test_look_and_say.c -o test_look_and_say-gcr.exe -lm
+
+./test_look_and_say-gcr.exe 40
+./test_look_and_say-gcr.exe 45
+./test_look_and_say-gcr.exe 48
+
+echo '--------------------------------------------------'
+echo 'gcc - Look and Say: Optimized'
+echo '--------------------------------------------------'
+
+gcc -Ofast test_look_and_say.c -o test_look_and_say-gco.exe -lm
+
+./test_look_and_say-gco.exe 40
+./test_look_and_say-gco.exe 45
+./test_look_and_say-gco.exe 48
+
+echo '--------------------------------------------------'
+echo 'gcc - Fibonacci: Regular'
+echo '--------------------------------------------------'
+
+gcc test_fibonacci.c -o test_fibonacci-gcr.exe -lm
+
+./test_fibonacci-gcr.exe 25
+./test_fibonacci-gcr.exe 35
+./test_fibonacci-gcr.exe 45
+
+echo '--------------------------------------------------'
+echo 'gcc - Fobonacci: Optimized'
+echo '--------------------------------------------------'
+
+gcc -Ofast test_fibonacci.c -o test_fibonacci-gco.exe -lm
+#gcc -O3 -march=native -mfpmath=sse test_fibonacci.c -o test_fibonacci-gco.exe -lm
+
+./test_fibonacci-gco.exe 25
+./test_fibonacci-gco.exe 35
+./test_fibonacci-gco.exe 45
+
+echo '--------------------------------------------------'
+echo 'gcc - Matrix Multiplication: Regular'
+echo '--------------------------------------------------'
+
+gcc test_matrix_multiplication.c -o test_matrix_multiplication-gcr.exe
+
+./test_matrix_multiplication-gcr.exe 1500 1500 1500
+./test_matrix_multiplication-gcr.exe 1750 1750 1750
+./test_matrix_multiplication-gcr.exe 2000 2000 2000
+
+echo '----------------------------------------------------'
+echo 'gcc - Matrix Multiplication: Optimized'
+echo '----------------------------------------------------'
+
+gcc -Ofast test_matrix_multiplication.c -o test_matrix_multiplication-gco.exe
+#gcc -O3 -march=native -mfpmath=sse test_matrix_multiplication.c -o test_matrix_multiplication-gco.exe
+
+./test_matrix_multiplication-gco.exe 1500 1500 1500
+./test_matrix_multiplication-gco.exe 1750 1750 1750
+./test_matrix_multiplication-gco.exe 2000 2000 2000
+
+echo '--------------------------------------------------'
+echo 'gcc - Evaluate Functions: Regular'
+echo '--------------------------------------------------'
+
+gcc test_evaluate_functions.c -o test_evaluate_functions-gcr.exe -lm
+
+./test_evaluate_functions-gcr.exe 80000
+./test_evaluate_functions-gcr.exe 90000
+./test_evaluate_functions-gcr.exe 100000
+
+echo '--------------------------------------------------'
+echo 'gcc - Evaluate Functions: Optimized'
+echo '--------------------------------------------------'
+
+gcc -Ofast test_evaluate_functions.c -o test_evaluate_functions-gco.exe -lm
+
+./test_evaluate_functions-gco.exe 80000
+./test_evaluate_functions-gco.exe 90000
+./test_evaluate_functions-gco.exe 100000
+
+echo '--------------------------------------------------'
+echo 'gcc - Belief: Regular'
+echo '--------------------------------------------------'
+
+gcc test_belief_propagation.c -o test_belief_propagation-gcr.exe -lm
+
+./test_belief_propagation-gcr.exe 250
+./test_belief_propagation-gcr.exe 500
+./test_belief_propagation-gcr.exe 1000
+
+echo '--------------------------------------------------'
+echo 'gcc - Belief: Optimized'
+echo '--------------------------------------------------'
+
+gcc -Ofast test_belief_propagation.c -o test_belief_propagation-gco.exe -lm
+
+./test_belief_propagation-gco.exe 250
+./test_belief_propagation-gco.exe 500
+./test_belief_propagation-gco.exe 1000
+
+echo '--------------------------------------------------'
+echo 'gcc - Markov Chain: Regular'
+echo '--------------------------------------------------'
+
+gcc test_markov_chain.c -o test_markov_chain-gcr.exe -lm
+
+./test_markov_chain-gcr.exe 5000
+./test_markov_chain-gcr.exe 10000
+./test_markov_chain-gcr.exe 15000
+
+echo '----------------------------------------------------'
+echo 'gcc - Markov Chain: Optimized'
+echo '----------------------------------------------------'
+
+gcc -Ofast test_markov_chain.c -o test_markov_chain-gco.exe -lm
+
+./test_markov_chain-gco.exe 5000
+./test_markov_chain-gco.exe 10000
+./test_markov_chain-gco.exe 15000
+
+echo '----------------------------------------------------'
+echo 'gcc - Fourth-order Laplace: Regular'
+echo '----------------------------------------------------'
+
+gcc test_laplace_jacobi_4.c -o test_laplace_jacobi_4-gcr.exe -lm
+
+./test_laplace_jacobi_4-gcr.exe 100
+./test_laplace_jacobi_4-gcr.exe 150
+./test_laplace_jacobi_4-gcr.exe 200
+
+echo '----------------------------------------------------'
+echo 'gcc - Fourth-order Laplace: Optimized'
+echo '----------------------------------------------------'
+
+gcc -Ofast test_laplace_jacobi_4.c -o test_laplace_jacobi_4-gco.exe -lm
+#gcc -O3 -march=native -mfpmath=sse test_laplace_jacobi_4.c -o test_laplace_jacobi_4-gco.exe -lm
+
+./test_laplace_jacobi_4-gco.exe 100
+./test_laplace_jacobi_4-gco.exe 150
+./test_laplace_jacobi_4-gco.exe 200
+
+echo '--------------------------------------------------'
 echo 'gcc - Munchausen Number: Regular'
 echo '--------------------------------------------------'
 
@@ -55,6 +198,22 @@ echo '--------------------------------------------------'
 gcc -Ofast test_munchausen_number.c -o test_munchausen_number-gco.exe -lm
 
 ./test_munchausen_number-gco.exe
+
+echo '--------------------------------------------------'
+echo 'gcc - Pernicious Number: Regular'
+echo '--------------------------------------------------'
+
+gcc test_pernicious_numbers.c -o test_pernicious_numbers-gcr.exe -lm
+
+./test_pernicious_numbers-gcr.exe 100000
+
+echo '--------------------------------------------------'
+echo 'gcc - Pernicious Number: Optimized'
+echo '--------------------------------------------------'
+
+gcc -Ofast test_pernicious_numbers.c -o test_pernicious_numbers-gco.exe -lm
+
+./test_pernicious_numbers-gco.exe 100000
 
 echo '__________________________________________________'
 echo 'Delete all executables'
