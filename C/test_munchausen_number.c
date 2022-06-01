@@ -13,7 +13,7 @@ int main(int argc, char* argv[]) {
     int power_of_digits[10];
     clock_t start, finish;
     FILE *fp;
-    fp = fopen("munchausen.csv","a");
+    fp = fopen("test_munchausen_number_C.csv","a");
     srand(time(NULL));
 
     // Find the four Munchausen numbers
