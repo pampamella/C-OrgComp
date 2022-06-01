@@ -14,7 +14,6 @@ int main(int argc, char* argv[]) {
     clock_t start, finish;
     FILE *fp;
     fp = fopen("munchausen.csv","a");
-	fprintf(fp, "Tempo Munchasen\n");
     srand(time(NULL));
 
     // Find the four Munchausen numbers
@@ -45,6 +44,7 @@ int main(int argc, char* argv[]) {
     }
     finish = clock();
     fprintf(fp,"%lf\n",(double)(finish-start)/CLOCKS_PER_SEC);
+    fclose(fp);
     printf("Munchausen numbers: %lf s \n", (double) (finish - start)/CLOCKS_PER_SEC);
     
     return 0;
