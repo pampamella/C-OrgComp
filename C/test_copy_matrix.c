@@ -16,13 +16,14 @@
 double*** make_3D_double_arr(int arr_size_x, int arr_size_y, int arr_size_z);
 
 int main(int argc, char* argv[]) {
-    FILE *fp;
-    fp = fopen("copy_matrix.txt","w");
-
     double ***A;
     int dim, i, j, k;
     clock_t start, finish; 
     double max_rand;
+
+    FILE *fp;
+    fp = fopen("test_copy_matrix_C.csv","a");
+
 
     // Get the dimension from the command line
     dim = atoi(argv[1]);
@@ -57,8 +58,9 @@ int main(int argc, char* argv[]) {
         }
     }
     finish = clock();
-    fprintf(fp,"%lf",(double)(finish-start)/CLOCKS_PER_SEC);
+    fprintf(fp,"%d, %lf\n", dim, (double)(finish-start)/CLOCKS_PER_SEC);
     printf("Time for matrix copy (%d): %lf s\n", dim, (double) (finish - start)/CLOCKS_PER_SEC);	
+    fclose(fp);
     return 0;
 }
 
