@@ -18,6 +18,9 @@ int main(int argc, char* argv[]) {
     clock_t start, finish; 
     double max_rand;
 
+    FILE *fp;
+    fp = fopen("test_evaluate_functions_C.csv","a");
+
     // Get the dimension from the command line
     n = atoi(argv[1]);
 
@@ -44,7 +47,10 @@ int main(int argc, char* argv[]) {
     }
 
     finish = clock();
+    
+    fprintf(fp,"%d, %lf\n", n, (double)(finish-start)/CLOCKS_PER_SEC);
 
+    fclose(fp);
     printf("Time Evaluate Function (%d): %lf s\n", n, (double) (finish - start)/CLOCKS_PER_SEC);	
     return 0;
 }
