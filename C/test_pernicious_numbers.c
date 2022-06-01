@@ -20,6 +20,10 @@ int main(int argc, char* argv[]) {
     int n;
     clock_t start, finish;
 
+    FILE *fp;
+    fp = fopen("test_pernicious_numbers_C.csv","a");
+
+
     // Get a positive integer from the command line
     n = atoi(argv[1]);
 
@@ -30,6 +34,9 @@ int main(int argc, char* argv[]) {
         }
     }
     finish = clock();
+
+    fprintf(fp,"%d, %u, %lf\n", n, i-1, (double)(finish-start)/CLOCKS_PER_SEC);
+    fclose(fp);
     printf("Pernicious number (%u): %lf s\n", i-1, (double) (finish - start)/CLOCKS_PER_SEC);
 
     return 0;
