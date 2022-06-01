@@ -11,6 +11,8 @@ int main( int argc, char *argv[] ) {
     int i, j, k;
     int dim;
     clock_t start, finish; 
+    FILE *fp;
+    fp = fopen("test_matrix_multiplication_C.csv","a");
 
         dim = atoi(argv[1]);
 
@@ -48,7 +50,7 @@ int main( int argc, char *argv[] ) {
     }
 
     finish = clock();
-
+	fprintf(fp,"%d, %lf\n", dim, (double)(finish-start)/CLOCKS_PER_SEC);
     printf("time for C(%d,%d) = A(%d,%d) B(%d,%d) is %lf s\n", dim, dim, dim, dim, dim, dim,
            (double) (finish - start)/CLOCKS_PER_SEC);
     
