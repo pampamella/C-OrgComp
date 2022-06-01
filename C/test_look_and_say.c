@@ -9,6 +9,9 @@ int main(int argc, char* argv[]) {
     int count, n, iter = 1, len = 1;
     clock_t start, finish;
 
+    FILE *fp;
+    fp = fopen("test_look_and_say_C.csv","a");
+
     n = atoi(argv[1]); // 10;
     iter = 0;
 
@@ -34,7 +37,9 @@ int main(int argc, char* argv[]) {
     finish = clock();
     // printf("sequence %s \n", x);
 
+    fprintf(fp,"%d, %lf\n", n, (double)(finish-start)/CLOCKS_PER_SEC);
     printf("Time for look and say sequence (%d): %lf s\n", n, (double) (finish - start)/CLOCKS_PER_SEC);
+    fclose(fp);
 
     return 0;
 }
