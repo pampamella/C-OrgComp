@@ -18,8 +18,8 @@ typedef enum {
     test_pernicious_numbers
 } testes;
 
-float maximo(float dados[], int tamanho){
-    float max = dados[0];
+double maximo(double dados[], int tamanho){
+    double max = dados[0];
     for(int i = 0;i<tamanho;i++){
         if(dados[i]>max){
             max = dados[i];
@@ -28,8 +28,8 @@ float maximo(float dados[], int tamanho){
     return max;
 }
 
-float minimo(float dados[], int tamanho){
-    float min = dados[0];
+double minimo(double dados[], int tamanho){
+    double min = dados[0];
     for(int i = 0;i<tamanho;i++){
         if(dados[i]<min){
             min = dados[i];
@@ -38,18 +38,18 @@ float minimo(float dados[], int tamanho){
     return min;
 }
 
-float media(float dados[], int tamanho){
-    float soma = 0;
+double media(double dados[], int tamanho){
+    double soma = 0;
     for(int i = 0;i<tamanho;i++){
         soma+=dados[i];
     }
     return soma/tamanho;
 }
 
-float desvioPadrao(float dados[], int tamanho){
-    float DP=0;
+double desvioPadrao(double dados[], int tamanho){
+    double DP=0;
     printf("%d",tamanho);
-    float med = media(dados,tamanho);
+    double med = media(dados,tamanho);
     printf("%f",media);
     for(int i = 0;i<tamanho;i++){
         DP+= pow(dados[i]-med,2);
@@ -64,17 +64,17 @@ void main(){
     FILE* arquivos[numeroDeTestes];
     FILE* estatisticas = fopen("estatisticas_C.csv","w");
     
-    arquivos[test_belief_propagation] = fopen("test_belief_propagation.csv","r");
-    arquivos[test_copy_matrix] = fopen("test_copy_matrix.csv","r");
-    arquivos[test_evaluate_functions] = fopen("test_evaluate_functions.csv","r");
-    arquivos[test_fibonacci] = fopen("test_fibonacci.csv","r");
-//    arquivos[test_gauss_legendre_quadrature] = fopen("test_gauss_legendre_quadrature.csv","r");
-//    arquivos[test_laplace_jacobi_4] = fopen("test_laplace_jacobi_4.csv","r");
-//    arquivos[test_look_and_say] = fopen("test_look_and_say.csv","r");
-    arquivos[test_markov_chain] = fopen("test_markov_chain.csv","r");
-    arquivos[test_matrix_multiplication] = fopen("test_matrix_multiplication.csv","r");
-    arquivos[test_munchausen_number] = fopen("test_munchausen_number.csv","r");
-    arquivos[test_pernicious_numbers] = fopen("test_pernicious_numbers.csv","r");
+    arquivos[test_belief_propagation] = fopen("test_belief_propagation_C.csv","r");
+    arquivos[test_copy_matrix] = fopen("test_copy_matrix_C.csv","r");
+    arquivos[test_evaluate_functions] = fopen("test_evaluate_functions_C.csv","r");
+    arquivos[test_fibonacci] = fopen("test_fibonacci_C.csv","r");
+    arquivos[test_gauss_legendre_quadrature] = fopen("test_gauss_legendre_quadrature_C.csv","r");
+    arquivos[test_laplace_jacobi_4] = fopen("test_laplace_jacobi_4_C.csv","r");
+    arquivos[test_look_and_say] = fopen("test_look_and_say_C.csv","r");
+    arquivos[test_markov_chain] = fopen("test_markov_chain_C.csv","r");
+    arquivos[test_matrix_multiplication] = fopen("test_matrix_multiplication_C.csv","r");
+    arquivos[test_munchausen_number] = fopen("test_munchausen_number_C.csv","r");
+    arquivos[test_pernicious_numbers] = fopen("test_pernicious_numbers_C.csv","r");
 	
     double dados_test_belief_propagation[3*iteracoes];
     double dados_test_copy_matrix[3*iteracoes];
@@ -108,9 +108,9 @@ void main(){
 	}
 	if (arquivos[test_evaluate_functions] != NULL) {
 		int i = 0;
-    	while (fgets(line, sizeof line, data)) {
+    	while (fgets(line, sizeof line, arquivos[test_evaluate_functions])) {
         	sscanf(line, "%lf",&time);
-        	dados_test_evaluate_functions[i] = arquivos[test_evaluate_functions];
+        	dados_test_evaluate_functions[i] = time;
         	i++;
     	}	
 	}	
@@ -122,30 +122,30 @@ void main(){
         	i++;
     	}	
 	}	
-//	if (arquivos[test_gauss_legendre_quadrature] != NULL) {
-//		int i = 0;
-//    	while (fgets(line, sizeof line, arquivos[test_gauss_legendre_quadrature])) {
-//        	sscanf(line, "%lf",&time);
-//        	dados_test_gauss_legendre_quadrature[i] = time;
-//        	i++;
-//    	}	
-//	}	
-//	if (arquivos[test_laplace_jacobi_4] != NULL) {
-//		int i = 0;
-//    	while (fgets(line, sizeof line, arquivos[test_laplace_jacobi_4] )) {
-//        	sscanf(line, "%lf",&time);
-//        	dados_test_laplace_jacobi_4[i] = time;
-//        	i++;
-//    	}	
-//	}
-//	if (arquivos[test_look_and_say] != NULL) {
-//		int i = 0;
-//    	while (fgets(line, sizeof line, arquivos[test_look_and_say])) {
-//        	sscanf(line, "%lf",&time);
-//        	dados_test_look_and_say[i] = time;
-//        	i++;
-//    	}	
-//	}
+	if (arquivos[test_gauss_legendre_quadrature] != NULL) {
+		int i = 0;
+   	while (fgets(line, sizeof line, arquivos[test_gauss_legendre_quadrature])) {
+       	sscanf(line, "%lf",&time);
+       	dados_test_gauss_legendre_quadrature[i] = time;
+       	i++;
+   	}	
+	}	
+	if (arquivos[test_laplace_jacobi_4] != NULL) {
+		int i = 0;
+   	while (fgets(line, sizeof line, arquivos[test_laplace_jacobi_4] )) {
+       	sscanf(line, "%lf",&time);
+       	dados_test_laplace_jacobi_4[i] = time;
+       	i++;
+   	}	
+	}
+	if (arquivos[test_look_and_say] != NULL) {
+		int i = 0;
+   	while (fgets(line, sizeof line, arquivos[test_look_and_say])) {
+       	sscanf(line, "%lf",&time);
+       	dados_test_look_and_say[i] = time;
+       	i++;
+   	}	
+	}
 	if (arquivos[test_markov_chain] != NULL) {
 		int i = 0;
     	while (fgets(line, sizeof line, arquivos[test_markov_chain] )) {
@@ -195,18 +195,18 @@ void main(){
                                                             minimo(dados_test_fibonacci,3*iteracoes),
                                                             media(dados_test_fibonacci,3*iteracoes),
                                                             desvioPadrao(dados_test_fibonacci,3*iteracoes));
-//    fprintf(estatisticas,"%f,%f,%f,%f\n",maximo(dados_test_gauss_legendre_quadrature,3*iteracoes),
-//                                                            minimo(dados_test_gauss_legendre_quadrature,3*iteracoes),
-//                                                            media(dados_test_gauss_legendre_quadrature,3*iteracoes),
-//                                                            desvioPadrao(dados_test_gauss_legendre_quadrature,3*iteracoes));
-//    fprintf(estatisticas,"%f,%f,%f,%f\n",maximo(dados_test_laplace_jacobi_4,3*iteracoes),
-//                                                            minimo(dados_test_laplace_jacobi_4,3*iteracoes),
-//                                                            media(dados_test_laplace_jacobi_4,3*iteracoes),
-//                                                            desvioPadrao(dados_test_laplace_jacobi_4,3*iteracoes));
-//    fprintf(estatisticas,"%f,%f,%f,%f\n",maximo(dados_test_look_and_say,3*iteracoes),
-//                                                            minimo(dados_test_look_and_say,3*iteracoes),
-//                                                            media(dados_test_look_and_say,3*iteracoes),
-//                                                            desvioPadrao(dados_test_look_and_say,3*iteracoes));
+   fprintf(estatisticas,"%f,%f,%f,%f\n",maximo(dados_test_gauss_legendre_quadrature,3*iteracoes),
+                                                           minimo(dados_test_gauss_legendre_quadrature,3*iteracoes),
+                                                           media(dados_test_gauss_legendre_quadrature,3*iteracoes),
+                                                           desvioPadrao(dados_test_gauss_legendre_quadrature,3*iteracoes));
+   fprintf(estatisticas,"%f,%f,%f,%f\n",maximo(dados_test_laplace_jacobi_4,3*iteracoes),
+                                                           minimo(dados_test_laplace_jacobi_4,3*iteracoes),
+                                                           media(dados_test_laplace_jacobi_4,3*iteracoes),
+                                                           desvioPadrao(dados_test_laplace_jacobi_4,3*iteracoes));
+   fprintf(estatisticas,"%f,%f,%f,%f\n",maximo(dados_test_look_and_say,3*iteracoes),
+                                                           minimo(dados_test_look_and_say,3*iteracoes),
+                                                           media(dados_test_look_and_say,3*iteracoes),
+                                                           desvioPadrao(dados_test_look_and_say,3*iteracoes));
     fprintf(estatisticas,"%f,%f,%f,%f\n",maximo(dados_test_markov_chain,3*iteracoes),
                                                             minimo(dados_test_markov_chain,3*iteracoes),
                                                             media(dados_test_markov_chain,3*iteracoes),
