@@ -29,7 +29,7 @@ int main(int argc, char* argv[]) {
     mcmc(x, N);
     finish = clock();
 
-    fprintf(fp,"%d, %lf\n", N, (double)(finish-start)/CLOCKS_PER_SEC);
+    fprintf(fp,"%lf\n", (double)(finish-start)/CLOCKS_PER_SEC);
 
     printf("Time for belief calculations (%d): %lf s\n", N, (double) (finish - start)/CLOCKS_PER_SEC);
     fclose(fp);

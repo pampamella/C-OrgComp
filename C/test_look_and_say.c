@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 int main(int argc, char* argv[]) {
-    char *a = malloc(2), *b = 0, *x, c;
+    char *a = malloc(20), *b = 0, *x, c;
     int count, n, iter = 1, len = 1;
     clock_t start, finish;
 
@@ -37,7 +37,7 @@ int main(int argc, char* argv[]) {
     finish = clock();
     // printf("sequence %s \n", x);
 
-    fprintf(fp,"%d, %lf\n", n, (double)(finish-start)/CLOCKS_PER_SEC);
+    fprintf(fp,"%lf\n",(double)(finish-start)/CLOCKS_PER_SEC);
     printf("Time for look and say sequence (%d): %lf s\n", n, (double) (finish - start)/CLOCKS_PER_SEC);
     fclose(fp);
 

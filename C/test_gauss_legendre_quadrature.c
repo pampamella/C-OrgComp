@@ -77,7 +77,7 @@ int main() {
     lege_inte(exp, -3, 3);
 
     finish = clock();
-    fprintf(fp,"%d, %lf\n", N, (double)(finish-start)/CLOCKS_PER_SEC);
+    fprintf(fp,"%lf\n", (double)(finish-start)/CLOCKS_PER_SEC);
     printf("Time for quadrature (%d): %lf s\n", N, (double) (finish - start)/CLOCKS_PER_SEC);
  
     //printf("Roots: ");

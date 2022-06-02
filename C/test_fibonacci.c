@@ -29,7 +29,7 @@ int main(int argc, char* argv[]) {
     n1 = iterative_fib(N);
     finish = clock();
 
-    fprintf(fp, "%d, %lf, ",N, (double)(finish-start)/CLOCKS_PER_SEC);
+    fprintf(fp, "%lf\n",(double)(finish-start)/CLOCKS_PER_SEC);
     
     printf("Iterative - Fibonnaci (%d): %lf s --> %d \n", N, (double) (finish - start)/CLOCKS_PER_SEC, n1);
     // Perform the Recursive Fibonnacy operations

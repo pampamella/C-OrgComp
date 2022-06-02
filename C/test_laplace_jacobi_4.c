@@ -86,7 +86,7 @@ int main( int argc, char *argv[] ) {
 
     finish = clock();
 
-    fprintf(fp,"%d, %d, %lf\n", sweep, N, (double)(finish-start)/CLOCKS_PER_SEC);
+    fprintf(fp,"%lf\n", (double)(finish-start)/CLOCKS_PER_SEC);
 
     printf("     Number of sweeps (%d): \n", sweep);
     printf("Time Jacobi Iteration (%d): %lf s\n", N, (double) (finish - start)/CLOCKS_PER_SEC);

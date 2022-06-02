@@ -50,7 +50,7 @@ int main( int argc, char *argv[] ) {
     }
 
     finish = clock();
-	fprintf(fp,"%d, %lf\n", dim, (double)(finish-start)/CLOCKS_PER_SEC);
+	fprintf(fp,"%lf\n", (double)(finish-start)/CLOCKS_PER_SEC);
     printf("time for C(%d,%d) = A(%d,%d) B(%d,%d) is %lf s\n", dim, dim, dim, dim, dim, dim,
            (double) (finish - start)/CLOCKS_PER_SEC);
     

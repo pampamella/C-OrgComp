@@ -59,7 +59,7 @@ int main(int argc, char* argv[]) {
     }
     finish = clock();
     
-    fprintf(fp,"%d, %lf\n", dim, (double)(finish-start)/CLOCKS_PER_SEC);
+    fprintf(fp,"%lf\n",(double)(finish-start)/CLOCKS_PER_SEC);
     printf("Time for matrix copy (%d): %lf s\n", dim, (double) (finish - start)/CLOCKS_PER_SEC);	
     fclose(fp);
     return 0;

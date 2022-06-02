@@ -35,7 +35,7 @@ int main(int argc, char* argv[]) {
     // Perform the belief operations
     belief_propagation( A, x, N);
     finish = clock();
-	fprintf(fp,"%d, %lf\n", N, (double)(finish-start)/CLOCKS_PER_SEC);
+	fprintf(fp,"%lf\n", (double)(finish-start)/CLOCKS_PER_SEC);
     printf("Time for Belief Propagation (%d): %lf s\n", N, (double) (finish - start)/CLOCKS_PER_SEC);  
     return 0;
 }

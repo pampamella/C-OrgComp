@@ -48,7 +48,7 @@ int main(int argc, char* argv[]) {
 
     finish = clock();
     
-    fprintf(fp,"%d, %lf\n", n, (double)(finish-start)/CLOCKS_PER_SEC);
+    fprintf(fp,"%lf\n",(double)(finish-start)/CLOCKS_PER_SEC);
 
     fclose(fp);
     printf("Time Evaluate Function (%d): %lf s\n", n, (double) (finish - start)/CLOCKS_PER_SEC);	

@@ -35,7 +35,7 @@ int main(int argc, char* argv[]) {
     }
     finish = clock();
 
-    fprintf(fp,"%d, %u, %lf\n", n, i-1, (double)(finish-start)/CLOCKS_PER_SEC);
+    fprintf(fp,"%lf\n", (double)(finish-start)/CLOCKS_PER_SEC);
     fclose(fp);
     printf("Pernicious number (%u): %lf s\n", i-1, (double) (finish - start)/CLOCKS_PER_SEC);
 
