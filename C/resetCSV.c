@@ -30,7 +30,4 @@ int main(){
     arquivos[test_munchausen_number] = fopen("test_munchausen_number_C.csv","w");
     arquivos[test_pernicious_numbers] = fopen("test_pernicious_numbers_C.csv","w");
 
-    for (int i = 0;i<numeroDeTestes;i++){
-        fprintf(arquivos[i],"");
-    }
 }

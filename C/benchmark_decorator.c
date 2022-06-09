@@ -76,7 +76,6 @@ double desvioPadrao(double dados[], int tamanho, int teste, int flag, int jump){
 }
 
 void main(){
-    printf("%d",test_copy_matrix);
     FILE* arquivos[numeroDeTestes];
     FILE* estatisticas = fopen("estatisticas_C.csv","w");
     
@@ -267,7 +266,7 @@ void main(){
                                                             desvioPadrao(dados_test_fibonacci,6*iteracoes,3,0,6),
                                                             media(dados_test_fibonacci,6*iteracoes,3,0,6));
 	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","fibonacci_iterativo_C_45", minimo(dados_test_fibonacci,6*iteracoes,3,0,6),
-                                                            maximo(dados_test_fibonacci,64*iteracoes,3,0,6),
+                                                            maximo(dados_test_fibonacci,6*iteracoes,3,0,6),
                                                             desvioPadrao(dados_test_fibonacci,6*iteracoes,3,0,6),
                                                             media(dados_test_fibonacci,6*iteracoes,3,0,6));
                                                             
@@ -436,7 +435,7 @@ void main(){
                                                             maximo(dados_test_pernicious_numbers,1*iteracoes,0,0,1),
                                                             desvioPadrao(dados_test_pernicious_numbers,1*iteracoes,0,0,1),
                                                             media(dados_test_pernicious_numbers,1*iteracoes,0,0,1));
-    fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","pernicious_numbers_C_100000", minimo(dados_test_pernicious_numbers,1*iteracoes,0,1,1),
+    fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","pernicious_numbers_O_C_100000", minimo(dados_test_pernicious_numbers,1*iteracoes,0,1,1),
                                                             maximo(dados_test_pernicious_numbers,1*iteracoes,0,1,1),
                                                             desvioPadrao(dados_test_pernicious_numbers,1*iteracoes,0,1,1),
                                                             media(dados_test_pernicious_numbers,1*iteracoes,0,1,1));
