@@ -16,6 +16,7 @@
 
 umask 022
 
+SECONDS=0
 
 rm -f *.exe
 
@@ -59,4 +60,7 @@ gcc -Ofast test_munchausen_number.c -o test_munchausen_number-gco.exe -lm
 echo '__________________________________________________'
 echo 'Delete all executables'
 echo '__________________________________________________'
+
+ELAPSED="Elapsed: $(($SECONDS / 3600))hrs $((($SECONDS / 60) % 60))min $(($SECONDS % 60))sec"
+
 rm -f *exe
