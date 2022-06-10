@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
 
     fprintf(fp, "%f hrs %f min %f sec\n", hora, min, seg);
     
-    printf("Time saved\n", time);  
+    printf("Time saved\n");  
 
     fclose(fp);
     return 0;
