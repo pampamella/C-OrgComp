@@ -288,10 +288,23 @@ gcc benchmark_decorator.c -o benchmark_decorator.exe -lm
 
 ./benchmark_decorator.exe
 
+
+ELAPSED="Elapsed: $(($SECONDS / 3600))hrs $((($SECONDS / 60) % 60))min $(($SECONDS % 60))sec"
+echo $ELAPSED
+
+echo '--------------------------------------------------'
+echo 'gcc - Saving runtime'
+echo '--------------------------------------------------'
+
+gcc save_time.c -o save_time.exe -lm 
+
+./save_time.exe $(($SECONDS / 3600)) $((($SECONDS / 60) % 60)) $(($SECONDS % 60))
+
+
 echo '__________________________________________________'
 echo 'Delete all executables'
 echo '__________________________________________________'
 rm -f *exe
 
-ELAPSED="Elapsed: $(($SECONDS / 3600))hrs $((($SECONDS / 60) % 60))min $(($SECONDS % 60))sec"
-echo $ELAPSED
+
+
