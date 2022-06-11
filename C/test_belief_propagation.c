@@ -14,7 +14,7 @@ int main(int argc, char* argv[]) {
     double A[Dim][Dim];
     double x[Dim];
     double max_rand;
-    int N, i, j, Dim;
+    int N, i, j;
     clock_t start, finish;
 	FILE *fp;
     fp = fopen("test_belief_propagation_C.csv","a");
