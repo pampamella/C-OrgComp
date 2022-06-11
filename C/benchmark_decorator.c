@@ -78,8 +78,10 @@ double desvioPadrao(double dados[], int tamanho, int teste, int flag, int jump){
 void main(){
     FILE* arquivos[numeroDeTestes];
     FILE* estatisticas = fopen("estatisticas_C.csv","w");
+    FILE* estatisticas_O = fopen("estatisticas_O_C.csv","w");
     
     fprintf(estatisticas,"%s,%s,%s,%s,%s\n","function name", "avg time", "min time", "max time", "std dev");
+    fprintf(estatisticas_O,"%s,%s,%s,%s,%s\n","function name", "avg time", "min time", "max time", "std dev");
     
     arquivos[test_belief_propagation] = fopen("test_belief_propagation_C.csv","r");
     arquivos[test_copy_matrix] = fopen("test_copy_matrix_C.csv","r");
@@ -207,15 +209,15 @@ void main(){
                                                             minimo(dados_test_copy_matrix,3*iteracoes,2,0,3),
                                                             maximo(dados_test_copy_matrix,3*iteracoes,2,0,3),
                                                             desvioPadrao(dados_test_copy_matrix,3*iteracoes,2,0,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","copy_matrix_O_5000", media(dados_test_copy_matrix,3*iteracoes,0,1,3),
+	fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","copy_matrix_5000", media(dados_test_copy_matrix,3*iteracoes,0,1,3),
                                                             minimo(dados_test_copy_matrix,3*iteracoes,0,1,3),
                                                             maximo(dados_test_copy_matrix,3*iteracoes,0,1,3),
                                                             desvioPadrao(dados_test_copy_matrix,3*iteracoes,0,1,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","copy_matrix_O_7000", media(dados_test_copy_matrix,3*iteracoes,1,1,3),
+	fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","copy_matrix_7000", media(dados_test_copy_matrix,3*iteracoes,1,1,3),
                                                             minimo(dados_test_copy_matrix,3*iteracoes,1,1,3),
                                                             maximo(dados_test_copy_matrix,3*iteracoes,1,1,3),
                                                             desvioPadrao(dados_test_copy_matrix,3*iteracoes,1,1,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","copy_matrix_O_9000", media(dados_test_copy_matrix,3*iteracoes,2,1,3),
+	fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","copy_matrix_9000", media(dados_test_copy_matrix,3*iteracoes,2,1,3),
                                                             minimo(dados_test_copy_matrix,3*iteracoes,2,1,3),
                                                             maximo(dados_test_copy_matrix,3*iteracoes,2,1,3),
                                                             desvioPadrao(dados_test_copy_matrix,3*iteracoes,2,1,3));
@@ -232,15 +234,15 @@ void main(){
                                                             minimo(dados_test_look_and_say,3*iteracoes,2,0,3),
                                                             maximo(dados_test_look_and_say,3*iteracoes,2,0,3),
                                                             desvioPadrao(dados_test_look_and_say,3*iteracoes,2,0,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","look_and_say_sequence_O_40", media(dados_test_look_and_say,3*iteracoes,0,1,3),
+	fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","look_and_say_sequence_40", media(dados_test_look_and_say,3*iteracoes,0,1,3),
                                                             minimo(dados_test_look_and_say,3*iteracoes,0,1,3),
                                                             maximo(dados_test_look_and_say,3*iteracoes,0,1,3),
                                                             desvioPadrao(dados_test_look_and_say,3*iteracoes,0,1,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","look_and_say_sequence_O_45", media(dados_test_look_and_say,3*iteracoes,1,1,3),
+	fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","look_and_say_sequence_45", media(dados_test_look_and_say,3*iteracoes,1,1,3),
                                                             minimo(dados_test_look_and_say,3*iteracoes,1,1,3),
                                                             maximo(dados_test_look_and_say,3*iteracoes,1,1,3),
                                                             desvioPadrao(dados_test_look_and_say,3*iteracoes,1,1,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","look_and_say_sequence_O_48", media(dados_test_look_and_say,3*iteracoes,2,1,3),
+	fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","look_and_say_sequence_48", media(dados_test_look_and_say,3*iteracoes,2,1,3),
                                                             minimo(dados_test_look_and_say,3*iteracoes,2,1,3),
                                                             maximo(dados_test_look_and_say,3*iteracoes,2,1,3),
                                                             desvioPadrao(dados_test_look_and_say,3*iteracoes,2,1,3));
@@ -270,27 +272,27 @@ void main(){
                                                             maximo(dados_test_fibonacci,6*iteracoes,5,0,6),
                                                             desvioPadrao(dados_test_fibonacci,6*iteracoes,5,0,6));
                                                             
-    fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","iterative_fibonacci_O_25", media(dados_test_fibonacci,6*iteracoes,0,1,6),
+    fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","iterative_fibonacci_25", media(dados_test_fibonacci,6*iteracoes,0,1,6),
                                                             minimo(dados_test_fibonacci,6*iteracoes,0,1,6),
                                                             maximo(dados_test_fibonacci,6*iteracoes,0,1,6),
                                                             desvioPadrao(dados_test_fibonacci,6*iteracoes,0,1,6));
-    fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","iterative_fibonacci_O_35", media(dados_test_fibonacci,6*iteracoes,2,1,6),
+    fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","iterative_fibonacci_35", media(dados_test_fibonacci,6*iteracoes,2,1,6),
                                                             minimo(dados_test_fibonacci,6*iteracoes,2,1,6),
                                                             maximo(dados_test_fibonacci,6*iteracoes,2,1,6),
                                                             desvioPadrao(dados_test_fibonacci,6*iteracoes,2,1,6));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","iterative_fibonacci_O_45", media(dados_test_fibonacci,6*iteracoes,4,1,6),
+	fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","iterative_fibonacci_45", media(dados_test_fibonacci,6*iteracoes,4,1,6),
                                                             minimo(dados_test_fibonacci,6*iteracoes,4,1,6),
                                                             maximo(dados_test_fibonacci,6*iteracoes,4,1,6),
                                                             desvioPadrao(dados_test_fibonacci,6*iteracoes,4,1,6));
-    fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","recursive_fibonacci_O_C_25", media(dados_test_fibonacci,6*iteracoes,1,1,6),
+    fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","recursive_fibonacci_25", media(dados_test_fibonacci,6*iteracoes,1,1,6),
                                                             minimo(dados_test_fibonacci,6*iteracoes,1,1,6),
                                                             maximo(dados_test_fibonacci,6*iteracoes,1,1,6),
                                                             desvioPadrao(dados_test_fibonacci,6*iteracoes,1,1,6));
-    fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","recursive_fibonacci_O_C_35", media(dados_test_fibonacci,6*iteracoes,3,1,6),
+    fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","recursive_fibonacci_35", media(dados_test_fibonacci,6*iteracoes,3,1,6),
                                                             minimo(dados_test_fibonacci,6*iteracoes,3,1,6),
                                                             maximo(dados_test_fibonacci,6*iteracoes,3,1,6),
                                                             desvioPadrao(dados_test_fibonacci,6*iteracoes,3,1,6));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","recursive_fibonacci_O_C_45", media(dados_test_fibonacci,6*iteracoes,5,1,6),
+	fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","recursive_fibonacci_45", media(dados_test_fibonacci,6*iteracoes,5,1,6),
                                                             minimo(dados_test_fibonacci,6*iteracoes,5,1,6),
                                                             maximo(dados_test_fibonacci,6*iteracoes,5,1,6),
                                                             desvioPadrao(dados_test_fibonacci,6*iteracoes,5,1,6));
@@ -308,15 +310,15 @@ void main(){
                                                             minimo(dados_test_matrix_multiplication,3*iteracoes,2,0,3),
                                                             maximo(dados_test_matrix_multiplication,3*iteracoes,2,0,3),
                                                             desvioPadrao(dados_test_matrix_multiplication,3*iteracoes,2,0,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","matrix_multiplication_O_1500", media(dados_test_matrix_multiplication,3*iteracoes,0,1,3),
+	fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","matrix_multiplication_1500", media(dados_test_matrix_multiplication,3*iteracoes,0,1,3),
                                                             minimo(dados_test_matrix_multiplication,3*iteracoes,0,1,3),
                                                             maximo(dados_test_matrix_multiplication,3*iteracoes,0,1,3),
                                                             desvioPadrao(dados_test_matrix_multiplication,3*iteracoes,0,1,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","matrix_multiplication_O_1750", media(dados_test_matrix_multiplication,3*iteracoes,1,1,3),
+	fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","matrix_multiplication_1750", media(dados_test_matrix_multiplication,3*iteracoes,1,1,3),
                                                             minimo(dados_test_matrix_multiplication,3*iteracoes,1,1,3),
                                                             maximo(dados_test_matrix_multiplication,3*iteracoes,1,1,3),
                                                             desvioPadrao(dados_test_matrix_multiplication,3*iteracoes,1,1,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","matrix_multiplication_O_2000", media(dados_test_matrix_multiplication,3*iteracoes,2,1,3),
+	fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","matrix_multiplication_2000", media(dados_test_matrix_multiplication,3*iteracoes,2,1,3),
                                                             minimo(dados_test_matrix_multiplication,3*iteracoes,2,1,3),
                                                             maximo(dados_test_matrix_multiplication,3*iteracoes,2,1,3),
                                                             desvioPadrao(dados_test_matrix_multiplication,3*iteracoes,2,1,3));
@@ -333,15 +335,15 @@ void main(){
                                                             minimo(dados_test_evaluate_functions,3*iteracoes,2,0,3),
                                                             maximo(dados_test_evaluate_functions,3*iteracoes,2,0,3),
                                                             desvioPadrao(dados_test_evaluate_functions,3*iteracoes,2,0,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","evaluate_functions_O_80000", media(dados_test_evaluate_functions,3*iteracoes,0,1,3),
+	fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","evaluate_functions_80000", media(dados_test_evaluate_functions,3*iteracoes,0,1,3),
                                                             minimo(dados_test_evaluate_functions,3*iteracoes,0,1,3),
                                                             maximo(dados_test_evaluate_functions,3*iteracoes,0,1,3),
                                                             desvioPadrao(dados_test_evaluate_functions,3*iteracoes,0,1,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","evaluate_functions_O_90000", media(dados_test_evaluate_functions,3*iteracoes,1,1,3),
+	fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","evaluate_functions_90000", media(dados_test_evaluate_functions,3*iteracoes,1,1,3),
                                                             minimo(dados_test_evaluate_functions,3*iteracoes,1,1,3),
                                                             maximo(dados_test_evaluate_functions,3*iteracoes,1,1,3),
                                                             desvioPadrao(dados_test_evaluate_functions,3*iteracoes,1,1,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","evaluate_functions_O_100000", media(dados_test_evaluate_functions,3*iteracoes,2,1,3),
+	fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","evaluate_functions_100000", media(dados_test_evaluate_functions,3*iteracoes,2,1,3),
                                                             minimo(dados_test_evaluate_functions,3*iteracoes,2,1,3),
                                                             maximo(dados_test_evaluate_functions,3*iteracoes,2,1,3),
                                                             desvioPadrao(dados_test_evaluate_functions,3*iteracoes,2,1,3));
@@ -358,15 +360,15 @@ void main(){
                                                             minimo(dados_test_belief_propagation,3*iteracoes,2,0,3),
                                                             maximo(dados_test_belief_propagation,3*iteracoes,2,0,3),
                                                             desvioPadrao(dados_test_belief_propagation,3*iteracoes,2,0,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","belief_propagation_O_250", media(dados_test_belief_propagation,3*iteracoes,0,1,3),
+	fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","belief_propagation_250", media(dados_test_belief_propagation,3*iteracoes,0,1,3),
                                                             minimo(dados_test_belief_propagation,3*iteracoes,0,1,3),
                                                             maximo(dados_test_belief_propagation,3*iteracoes,0,1,3),
                                                             desvioPadrao(dados_test_belief_propagation,3*iteracoes,0,1,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","belief_propagation_O_500", media(dados_test_belief_propagation,3*iteracoes,1,1,3),
+	fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","belief_propagation_500", media(dados_test_belief_propagation,3*iteracoes,1,1,3),
                                                             minimo(dados_test_belief_propagation,3*iteracoes,1,1,3),
                                                             maximo(dados_test_belief_propagation,3*iteracoes,1,1,3),
                                                             desvioPadrao(dados_test_belief_propagation,3*iteracoes,1,1,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","belief_propagation_O_1000", media(dados_test_belief_propagation,3*iteracoes,2,1,3),
+	fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","belief_propagation_1000", media(dados_test_belief_propagation,3*iteracoes,2,1,3),
                                                             minimo(dados_test_belief_propagation,3*iteracoes,2,1,3),
                                                             maximo(dados_test_belief_propagation,3*iteracoes,2,1,3),
                                                             desvioPadrao(dados_test_belief_propagation,3*iteracoes,2,1,3));
@@ -384,15 +386,15 @@ void main(){
                                                             minimo(dados_test_markov_chain,3*iteracoes,2,0,3),
                                                             maximo(dados_test_markov_chain,3*iteracoes,2,0,3),
                                                             desvioPadrao(dados_test_markov_chain,3*iteracoes,2,0,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","markov_chain_function_O_5000", media(dados_test_markov_chain,3*iteracoes,0,1,3),
+	fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","markov_chain_function_5000", media(dados_test_markov_chain,3*iteracoes,0,1,3),
                                                             minimo(dados_test_markov_chain,3*iteracoes,0,1,3),
                                                             maximo(dados_test_markov_chain,3*iteracoes,0,1,3),
                                                             desvioPadrao(dados_test_markov_chain,3*iteracoes,0,1,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","markov_chain_function_O_10000", media(dados_test_markov_chain,3*iteracoes,1,1,3),
+	fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","markov_chain_function_10000", media(dados_test_markov_chain,3*iteracoes,1,1,3),
                                                             minimo(dados_test_markov_chain,3*iteracoes,1,1,3),
                                                             maximo(dados_test_markov_chain,3*iteracoes,1,1,3),
                                                             desvioPadrao(dados_test_markov_chain,3*iteracoes,1,1,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","markov_chain_function_O_15000", media(dados_test_markov_chain,3*iteracoes,2,1,3),
+	fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","markov_chain_function_15000", media(dados_test_markov_chain,3*iteracoes,2,1,3),
                                                             minimo(dados_test_markov_chain,3*iteracoes,2,1,3),
                                                             maximo(dados_test_markov_chain,3*iteracoes,2,1,3),
                                                             desvioPadrao(dados_test_markov_chain,3*iteracoes,2,1,3));																												                                                        
@@ -409,15 +411,15 @@ void main(){
                                                             minimo(dados_test_laplace_jacobi_4,3*iteracoes,2,0,3),
                                                             maximo(dados_test_laplace_jacobi_4,3*iteracoes,2,0,3),
                                                             desvioPadrao(dados_test_laplace_jacobi_4,3*iteracoes,2,0,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","iterative_solver_O_100", media(dados_test_laplace_jacobi_4,3*iteracoes,0,1,3),
+	fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","iterative_solver_100", media(dados_test_laplace_jacobi_4,3*iteracoes,0,1,3),
                                                             minimo(dados_test_laplace_jacobi_4,3*iteracoes,0,1,3),
                                                             maximo(dados_test_laplace_jacobi_4,3*iteracoes,0,1,3),
                                                             desvioPadrao(dados_test_laplace_jacobi_4,3*iteracoes,0,1,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","iterative_solver_O_150", media(dados_test_laplace_jacobi_4,3*iteracoes,1,1,3),
+	fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","iterative_solver_150", media(dados_test_laplace_jacobi_4,3*iteracoes,1,1,3),
                                                             minimo(dados_test_laplace_jacobi_4,3*iteracoes,1,1,3),
                                                             maximo(dados_test_laplace_jacobi_4,3*iteracoes,1,1,3),
                                                             desvioPadrao(dados_test_laplace_jacobi_4,3*iteracoes,1,1,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","iterative_solver_O_200", media(dados_test_laplace_jacobi_4,3*iteracoes,2,1,3),
+	fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","iterative_solver_200", media(dados_test_laplace_jacobi_4,3*iteracoes,2,1,3),
                                                             minimo(dados_test_laplace_jacobi_4,3*iteracoes,2,1,3),
                                                             maximo(dados_test_laplace_jacobi_4,3*iteracoes,2,1,3),
                                                             desvioPadrao(dados_test_laplace_jacobi_4,3*iteracoes,2,1,3));
@@ -426,7 +428,7 @@ void main(){
                                                             minimo(dados_test_munchausen_number,1*iteracoes,0,0,1),
                                                             maximo(dados_test_munchausen_number,1*iteracoes,0,0,1),
                                                             desvioPadrao(dados_test_munchausen_number,1*iteracoes,0,0,1));
-    fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","find_munchausen_numbers_O", media(dados_test_munchausen_number,1*iteracoes,0,1,1),
+    fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","find_munchausen_numbers", media(dados_test_munchausen_number,1*iteracoes,0,1,1),
                                                             minimo(dados_test_munchausen_number,1*iteracoes,0,1,1),
                                                             maximo(dados_test_munchausen_number,1*iteracoes,0,1,1),
                                                             desvioPadrao(dados_test_munchausen_number,1*iteracoes,0,1,1));
@@ -435,7 +437,7 @@ void main(){
                                                             minimo(dados_test_pernicious_numbers,1*iteracoes,0,0,1),
                                                             maximo(dados_test_pernicious_numbers,1*iteracoes,0,0,1),
                                                             desvioPadrao(dados_test_pernicious_numbers,1*iteracoes,0,0,1));
-    fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","find_pernicious_numbers_O_100000", media(dados_test_pernicious_numbers,1*iteracoes,0,1,1),
+    fprintf(estatisticas_O,"%s,%lf,%lf,%lf,%lf\n","find_pernicious_numbers_100000", media(dados_test_pernicious_numbers,1*iteracoes,0,1,1),
                                                             minimo(dados_test_pernicious_numbers,1*iteracoes,0,1,1),
                                                             maximo(dados_test_pernicious_numbers,1*iteracoes,0,1,1),
                                                             desvioPadrao(dados_test_pernicious_numbers,1*iteracoes,0,1,1));
