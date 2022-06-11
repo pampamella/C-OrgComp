@@ -195,27 +195,27 @@ void main(){
         	i++;
     	}	
 	}	
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","serial_copy_5000", media(dados_test_copy_matrix,3*iteracoes,0,0,3),
+	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","copy_matrix_5000", media(dados_test_copy_matrix,3*iteracoes,0,0,3),
                                                             minimo(dados_test_copy_matrix,3*iteracoes,0,0,3),
                                                             maximo(dados_test_copy_matrix,3*iteracoes,0,0,3),
                                                             desvioPadrao(dados_test_copy_matrix,3*iteracoes,0,0,3));
-    fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","serial_copy_7000", media(dados_test_copy_matrix,3*iteracoes,1,0,3),
+    fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","copy_matrix_7000", media(dados_test_copy_matrix,3*iteracoes,1,0,3),
                                                             minimo(dados_test_copy_matrix,3*iteracoes,1,0,3),
                                                             maximo(dados_test_copy_matrix,3*iteracoes,1,0,3),
                                                             desvioPadrao(dados_test_copy_matrix,3*iteracoes,1,0,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","serial_copy_9000", media(dados_test_copy_matrix,3*iteracoes,2,0,3),
+	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","copy_matrix_9000", media(dados_test_copy_matrix,3*iteracoes,2,0,3),
                                                             minimo(dados_test_copy_matrix,3*iteracoes,2,0,3),
                                                             maximo(dados_test_copy_matrix,3*iteracoes,2,0,3),
                                                             desvioPadrao(dados_test_copy_matrix,3*iteracoes,2,0,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","serial_copy_O_5000", media(dados_test_copy_matrix,3*iteracoes,0,1,3),
+	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","copy_matrix_O_5000", media(dados_test_copy_matrix,3*iteracoes,0,1,3),
                                                             minimo(dados_test_copy_matrix,3*iteracoes,0,1,3),
                                                             maximo(dados_test_copy_matrix,3*iteracoes,0,1,3),
                                                             desvioPadrao(dados_test_copy_matrix,3*iteracoes,0,1,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","serial_copy_O_7000", media(dados_test_copy_matrix,3*iteracoes,1,1,3),
+	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","copy_matrix_O_7000", media(dados_test_copy_matrix,3*iteracoes,1,1,3),
                                                             minimo(dados_test_copy_matrix,3*iteracoes,1,1,3),
                                                             maximo(dados_test_copy_matrix,3*iteracoes,1,1,3),
                                                             desvioPadrao(dados_test_copy_matrix,3*iteracoes,1,1,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","serial_copy_O_9000", media(dados_test_copy_matrix,3*iteracoes,2,1,3),
+	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","copy_matrix_O_9000", media(dados_test_copy_matrix,3*iteracoes,2,1,3),
                                                             minimo(dados_test_copy_matrix,3*iteracoes,2,1,3),
                                                             maximo(dados_test_copy_matrix,3*iteracoes,2,1,3),
                                                             desvioPadrao(dados_test_copy_matrix,3*iteracoes,2,1,3));
@@ -397,27 +397,27 @@ void main(){
                                                             maximo(dados_test_markov_chain,3*iteracoes,2,1,3),
                                                             desvioPadrao(dados_test_markov_chain,3*iteracoes,2,1,3));																												                                                        
    
-   fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","vectorized_solver_100", media(dados_test_laplace_jacobi_4,3*iteracoes,0,0,3),
+   fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","iterative_solver_100", media(dados_test_laplace_jacobi_4,3*iteracoes,0,0,3),
                                                             minimo(dados_test_laplace_jacobi_4,3*iteracoes,0,0,3),
                                                             maximo(dados_test_laplace_jacobi_4,3*iteracoes,0,0,3),
                                                             desvioPadrao(dados_test_laplace_jacobi_4,3*iteracoes,0,0,3));
-    fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","vectorized_solver_150", media(dados_test_laplace_jacobi_4,3*iteracoes,1,0,3),
+    fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","iterative_solver_150", media(dados_test_laplace_jacobi_4,3*iteracoes,1,0,3),
                                                             minimo(dados_test_laplace_jacobi_4,3*iteracoes,1,0,3),
                                                             maximo(dados_test_laplace_jacobi_4,3*iteracoes,1,0,3),
                                                             desvioPadrao(dados_test_laplace_jacobi_4,3*iteracoes,1,0,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","vectorized_solver_200", media(dados_test_laplace_jacobi_4,3*iteracoes,2,0,3),
+	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","iterative_solver_200", media(dados_test_laplace_jacobi_4,3*iteracoes,2,0,3),
                                                             minimo(dados_test_laplace_jacobi_4,3*iteracoes,2,0,3),
                                                             maximo(dados_test_laplace_jacobi_4,3*iteracoes,2,0,3),
                                                             desvioPadrao(dados_test_laplace_jacobi_4,3*iteracoes,2,0,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","vectorized_solver_O_100", media(dados_test_laplace_jacobi_4,3*iteracoes,0,1,3),
+	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","iterative_solver_O_100", media(dados_test_laplace_jacobi_4,3*iteracoes,0,1,3),
                                                             minimo(dados_test_laplace_jacobi_4,3*iteracoes,0,1,3),
                                                             maximo(dados_test_laplace_jacobi_4,3*iteracoes,0,1,3),
                                                             desvioPadrao(dados_test_laplace_jacobi_4,3*iteracoes,0,1,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","vectorized_solver_O_150", media(dados_test_laplace_jacobi_4,3*iteracoes,1,1,3),
+	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","iterative_solver_O_150", media(dados_test_laplace_jacobi_4,3*iteracoes,1,1,3),
                                                             minimo(dados_test_laplace_jacobi_4,3*iteracoes,1,1,3),
                                                             maximo(dados_test_laplace_jacobi_4,3*iteracoes,1,1,3),
                                                             desvioPadrao(dados_test_laplace_jacobi_4,3*iteracoes,1,1,3));
-	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","vectorized_solver_O_200", media(dados_test_laplace_jacobi_4,3*iteracoes,2,1,3),
+	fprintf(estatisticas,"%s,%lf,%lf,%lf,%lf\n","iterative_solver_O_200", media(dados_test_laplace_jacobi_4,3*iteracoes,2,1,3),
                                                             minimo(dados_test_laplace_jacobi_4,3*iteracoes,2,1,3),
                                                             maximo(dados_test_laplace_jacobi_4,3*iteracoes,2,1,3),
                                                             desvioPadrao(dados_test_laplace_jacobi_4,3*iteracoes,2,1,3));
