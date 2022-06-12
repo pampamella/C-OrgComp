@@ -77,8 +77,8 @@ double desvioPadrao(double dados[], int tamanho, int teste, int flag, int jump){
 
 void main(){
     FILE* arquivos[numeroDeTestes];
-    FILE* estatisticas = fopen("estatisticas_C.csv","w");
-    FILE* estatisticas_O = fopen("estatisticas_O_C.csv","w");
+    FILE* estatisticas = fopen("results-amb-c.csv","w");
+    FILE* estatisticas_O = fopen("results-amb-c-otimizado.csv","w");
     
     fprintf(estatisticas,"%s,%s,%s,%s,%s\n","function name", "avg time", "min time", "max time", "std dev");
     fprintf(estatisticas_O,"%s,%s,%s,%s,%s\n","function name", "avg time", "min time", "max time", "std dev");
