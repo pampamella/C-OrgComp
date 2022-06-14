@@ -15,6 +15,8 @@ int main(int argc, char* argv[]) {
     int i, j, dim;
     clock_t start, finish;
 
+    FILE *fp;
+    fp = fopen("test_markov_chain_C.csv","a");
     // Get the number of iterations from the command line
     N = atoi(argv[1]);
 
@@ -27,7 +29,11 @@ int main(int argc, char* argv[]) {
     mcmc(x, N);
     finish = clock();
 
+    fprintf(fp,"%lf\n", (double)(finish-start)/CLOCKS_PER_SEC);
+
     printf("Time for belief calculations (%d): %lf s\n", N, (double) (finish - start)/CLOCKS_PER_SEC);
+    fclose(fp);
+
     return 0;
 }
 

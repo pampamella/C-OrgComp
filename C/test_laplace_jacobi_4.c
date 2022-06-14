@@ -45,6 +45,10 @@ int main( int argc, char *argv[] ) {
     char c[100];
     clock_t start, finish;
 
+    FILE *fp;
+    fp = fopen("test_laplace_jacobi_4_C.csv","a");
+
+
     // Get the number of grid points along each dimension
     if (argc == 2) {
        N = atoi(argv[1]);
@@ -81,9 +85,13 @@ int main( int argc, char *argv[] ) {
     }
 
     finish = clock();
+
+    fprintf(fp,"%lf\n", (double)(finish-start)/CLOCKS_PER_SEC);
+
     printf("     Number of sweeps (%d): \n", sweep);
     printf("Time Jacobi Iteration (%d): %lf s\n", N, (double) (finish - start)/CLOCKS_PER_SEC);
-
+    
+    fclose(fp);
     return 0;
 }
 

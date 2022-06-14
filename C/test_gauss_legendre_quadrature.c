@@ -66,7 +66,9 @@ double lege_inte(double (*f)(double), double a, double b) {
 int main() {
     clock_t start, finish;
     int i;
-
+	FILE *fp;
+    fp = fopen("test_gauss_legendre_quadrature_C.csv","a");
+    
     srand(time(NULL));
     start = clock();
  
@@ -75,6 +77,7 @@ int main() {
     lege_inte(exp, -3, 3);
 
     finish = clock();
+    fprintf(fp,"%lf\n", (double)(finish-start)/CLOCKS_PER_SEC);
     printf("Time for quadrature (%d): %lf s\n", N, (double) (finish - start)/CLOCKS_PER_SEC);
  
     //printf("Roots: ");

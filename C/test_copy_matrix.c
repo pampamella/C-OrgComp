@@ -21,6 +21,10 @@ int main(int argc, char* argv[]) {
     clock_t start, finish; 
     double max_rand;
 
+    FILE *fp;
+    fp = fopen("test_copy_matrix_C.csv","a");
+
+
     // Get the dimension from the command line
     dim = atoi(argv[1]);
 
@@ -54,8 +58,10 @@ int main(int argc, char* argv[]) {
         }
     }
     finish = clock();
-
+    
+    fprintf(fp,"%lf\n",(double)(finish-start)/CLOCKS_PER_SEC);
     printf("Time for matrix copy (%d): %lf s\n", dim, (double) (finish - start)/CLOCKS_PER_SEC);	
+    fclose(fp);
     return 0;
 }
 

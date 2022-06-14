@@ -12,7 +12,8 @@ int main(int argc, char* argv[]) {
     int n, i, number;
     int power_of_digits[10];
     clock_t start, finish;
-
+    FILE *fp;
+    fp = fopen("test_munchausen_number_C.csv","a");
     srand(time(NULL));
 
     // Find the four Munchausen numbers
@@ -42,6 +43,8 @@ int main(int argc, char* argv[]) {
         i++;
     }
     finish = clock();
+    fprintf(fp,"%lf\n",(double)(finish-start)/CLOCKS_PER_SEC);
+    fclose(fp);
     printf("Munchausen numbers: %lf s \n", (double) (finish - start)/CLOCKS_PER_SEC);
     
     return 0;

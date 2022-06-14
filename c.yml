@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Build essential
+      apt:
+        name: build-essential
+        update_cache: yes
