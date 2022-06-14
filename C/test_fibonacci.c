@@ -18,6 +18,9 @@ int main(int argc, char* argv[]) {
     N = atoi(argv[1]);
     M = N;
 
+    FILE *fp;
+    fp = fopen("test_fibonacci_C.csv","a");
+
     srand(time(NULL));
 
     // Perform the Recursive Fibonnacy operations
@@ -26,6 +29,8 @@ int main(int argc, char* argv[]) {
     n1 = iterative_fib(N);
     finish = clock();
 
+    fprintf(fp, "%lf\n",(double)(finish-start)/CLOCKS_PER_SEC);
+    
     printf("Iterative - Fibonnaci (%d): %lf s --> %d \n", N, (double) (finish - start)/CLOCKS_PER_SEC, n1);
     // Perform the Recursive Fibonnacy operations
     start = clock();
@@ -33,7 +38,10 @@ int main(int argc, char* argv[]) {
     n1 = recursive_fib(M);
     finish = clock();
 
+    fprintf(fp,"%lf\n", (double)(finish-start)/CLOCKS_PER_SEC);
     printf("Recursive - Fibonnaci (%d): %lf s --> %d \n", M, (double) (finish - start)/CLOCKS_PER_SEC, n1);  
+
+    fclose(fp);
     return 0;
 }
 

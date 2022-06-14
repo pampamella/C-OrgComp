@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-const int Dim = 1000;
+const int Dim = 500;
 
 void belief_propagation(double A[Dim][Dim], double x[Dim], int N);
 
@@ -14,12 +14,14 @@ int main(int argc, char* argv[]) {
     double A[Dim][Dim];
     double x[Dim];
     double max_rand;
-    int N, i, j, Dim;
+    int N, i, j;
     clock_t start, finish;
+	FILE *fp;
+    fp = fopen("test_belief_propagation_C.csv","a");
 
     // Get the number of iterations from the command line
     N = atoi(argv[1]);
-
+	
     srand(time(NULL));
     start = clock();
 
@@ -33,7 +35,7 @@ int main(int argc, char* argv[]) {
     // Perform the belief operations
     belief_propagation( A, x, N);
     finish = clock();
-
+	fprintf(fp,"%lf\n", (double)(finish-start)/CLOCKS_PER_SEC);
     printf("Time for Belief Propagation (%d): %lf s\n", N, (double) (finish - start)/CLOCKS_PER_SEC);  
     return 0;
 }
